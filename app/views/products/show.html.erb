@@ -1,0 +1,15 @@
+<h2>Products#show</h2>
+<ul>
+<li><%=@product.name%></li>
+<li><%=@product.price%></li>
+<li><%=@product.discount%></li>
+<li><%=@product.stock%></li>
+<li><%=@product.status%></li>
+<li><%=@product.category.name%></li>
+<li><%@product.photos.each do |photo| %></li>
+      <%=image_tag photo%>
+    <%end%>
+</ul>
+
+<%=link_to "delete", product_path(@product.id), data:{turbo_method: :delete}%>
+<%= link_to "edit", edit_product_path(@product.id)%>
